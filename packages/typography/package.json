@@ -1,0 +1,25 @@
+{
+  "name": "@bds-web/typography",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "main": "./dist/tokens.tailwind.css",
+  "exports": {
+    ".": "./dist/tokens.tailwind.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "node ./scripts/copy-assets.mjs",
+    "prepack": "pnpm run build",
+    "typecheck": "echo '(typography) skipped typecheck (css-only)'"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19"
+  }
+}

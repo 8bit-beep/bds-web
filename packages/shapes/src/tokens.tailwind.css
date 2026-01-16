@@ -1,0 +1,6 @@
+@theme {
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 12px;
+  ----radius-full: 100000px;
+}

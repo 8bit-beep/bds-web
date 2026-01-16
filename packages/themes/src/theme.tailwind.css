@@ -1,0 +1,33 @@
+@media (prefers-reduced-motion: no-preference) {
+  *,
+  *::before,
+  *::after {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke;
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+  }
+}
+
+@theme {
+  --color-static-white: var(--bds-color-static-white);
+  --color-static-black: var(--bds-color-static-black);
+
+  --color-greyscale-10: var(--bds-color-greyscale-10);
+  --color-greyscale-20: var(--bds-color-greyscale-20);
+  --color-greyscale-30: var(--bds-color-greyscale-30);
+  --color-greyscale-40: var(--bds-color-greyscale-40);
+  --color-greyscale-50: var(--bds-color-greyscale-50);
+  --color-greyscale-60: var(--bds-color-greyscale-60);
+  --color-greyscale-70: var(--bds-color-greyscale-70);
+  --color-greyscale-80: var(--bds-color-greyscale-80);
+  --color-greyscale-90: var(--bds-color-greyscale-90);
+
+  --color-red-light: var(--bds-color-red-light);
+  --color-red-dark: var(--bds-color-red-dark);
+
+  --color-blue-light: var(--bds-color-blue-light);
+  --color-blue-dark: var(--bds-color-blue-dark);
+
+  --color-green-light: var(--bds-color-green-light);
+  --color-green-dark: var(--bds-color-green-dark);
+}
