@@ -19,5 +19,6 @@ export const Button = styled.button<{
   align-items: center;
   justify-content: center;
   gap: 10px;
+  box-sizing: border-box;
 `;
 
