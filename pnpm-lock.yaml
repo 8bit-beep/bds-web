@@ -87,14 +87,14 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@bds-web/shapes':
-        specifier: ^1.0.0
-        version: 1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: ^1.1.0
+        version: 1.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@bds-web/themes':
         specifier: ^1.0.0
         version: 1.0.0(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3))(next@16.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@bds-web/typography':
-        specifier: ^1.0.0
-        version: 1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: ^1.1.0
+        version: 1.1.0(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@emotion/cache':
         specifier: ^11.14.0
         version: 11.14.0
@@ -170,8 +170,8 @@ packages:
       react: '>=19'
       react-dom: '>=19'
 
-  '@bds-web/shapes@1.0.0':
-    resolution: {integrity: sha512-DdBotdQ8wazf8jTXEOGChfK6RaAN3GGLgZm9oAVOfDJvxK1TUL3uVDx/Yh8Xl97XHGq5L9O8CwMOVG9CujAOCg==}
+  '@bds-web/shapes@1.1.0':
+    resolution: {integrity: sha512-3Muzgk2SdAE6OBfj9Tnv84KMcxbGyf7cYkXYhwhobLRrexwMy5WCYY7OoLASuo0+FpTqTagO2SVJYOjvSnmFig==}
     peerDependencies:
       react: '>=19'
       react-dom: '>=19'
@@ -185,9 +185,11 @@ packages:
       react: '>=19'
       react-dom: '>=19'
 
-  '@bds-web/typography@1.0.0':
-    resolution: {integrity: sha512-l+1aqi19lZ9z6gmqXoHDiP+QiWK/zucInPT1EV5V3DUe56ZMsXd2U3mfTKakTxmXo28xT6Q9bKOIhK4+oB5V2w==}
+  '@bds-web/typography@1.1.0':
+    resolution: {integrity: sha512-Sl8IEkgcMqzsfQJtImvrjQyMCf26xFAXuxAenmD5Q/1lvBXnhCUe2t5GdlPb5bIbZvcQnq9fUzBaM/Ce3IfN7g==}
     peerDependencies:
+      '@emotion/react': ^11.14.0
+      '@emotion/styled': ^11.14.1
       react: '>=19'
       react-dom: '>=19'
 
@@ -803,7 +805,7 @@ snapshots:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
-  '@bds-web/shapes@1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@bds-web/shapes@1.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
@@ -816,8 +818,10 @@ snapshots:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
-  '@bds-web/typography@1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@bds-web/typography@1.1.0(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
+      '@emotion/react': 11.14.0(@types/react@19.2.8)(react@19.2.3)
+      '@emotion/styled': 11.14.1(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3)
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
