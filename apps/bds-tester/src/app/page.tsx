@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, TextInput } from "@bds-web/ui";
+import { Button, modal, TextInput } from "@bds-web/ui";
 import { useState } from "react";
 
 const Home = () => {
@@ -23,8 +23,8 @@ const Home = () => {
             value={text}
             onChange={(e) => setText(e.target.value)}
             errorMessage={errorMessage}
-            
           />
+          <button onClick={() => modal.open({ title: "Test Modal", content: <div>Modal Content</div> })}>open modal</button>
         </div>
       </div>
     </div>
