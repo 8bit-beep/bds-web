@@ -1,11 +1,15 @@
 {
   "name": "@bds-web/typography",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": false,
-  "type": "module",
-  "main": "./dist/tokens.tailwind.css",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/tokens.tailwind.css"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tokens.tailwind.css": "./dist/tokens.tailwind.css"
   },
   "files": [
     "dist"
@@ -14,12 +18,14 @@
     "**/*.css"
   ],
   "scripts": {
-    "build": "node ./scripts/copy-assets.mjs",
+    "build": "tsc -p tsconfig.build.json && node ./scripts/copy-assets.mjs",
     "prepack": "pnpm run build",
-    "typecheck": "echo '(typography) skipped typecheck (css-only)'"
+    "typecheck": "tsc -b"
   },
   "peerDependencies": {
     "react": ">=19",
-    "react-dom": ">=19"
+    "react-dom": ">=19",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1"
   }
 }
