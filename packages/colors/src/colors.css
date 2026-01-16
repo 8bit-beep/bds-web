@@ -31,7 +31,7 @@
   --bds-color-blue-light: #346287;
   --bds-color-blue-dark: #2E3D4A;
 
-  --bds-color-green-light: #346287;
+  --bds-color-green-light: #33A99D;
   --bds-color-green-dark: #247169;
 }
 
@@ -58,6 +58,6 @@ html[data-theme="dark"] {
   --bds-color-blue-light: #346287;
   --bds-color-blue-dark: #2E3D4A;
 
-  --bds-color-green-light: #346287;
+  --bds-color-green-light: #33A99D;
   --bds-color-green-dark: #247169;
 }

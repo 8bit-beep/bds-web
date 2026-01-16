@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "@bds-web/themes/theme.tailwind.css";
+@import "@bds-web/colors/colors.css";
+@import "@bds-web/typography/tokens.tailwind.css";
+@import "@bds-web/shapes/tokens.tailwind.css";
