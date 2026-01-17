@@ -14,7 +14,7 @@ export const Button = styled.button<{
   ${({ $buttonType }) => getStyle($buttonType)};
   height: ${({ $buttonSize }) => getSize($buttonSize)};
   padding: 12px ${({ $buttonSize }) => getSize($buttonSize)};
-  border-radius: ${shapes.medium};
+  border-radius: ${shapes.small};
   display: flex;
   align-items: center;
   justify-content: center;

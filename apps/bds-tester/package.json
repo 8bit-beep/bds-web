@@ -9,11 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@bds-web/colors": "1.1.0",
-    "@bds-web/shapes": "1.1.0",
-    "@bds-web/themes": "1.0.0",
-    "@bds-web/typography": "1.1.0",
-    "@bds-web/ui": "^1.0.0",
+    "@bds-web/colors": "workspace:^",
+    "@bds-web/shapes": "workspace:^",
+    "@bds-web/themes": "workspace:^",
+    "@bds-web/typography": "workspace:^",
+    "@bds-web/ui": "workspace:^",
     "next": "16.1.2",
     "react": "19.2.3",
     "react-dom": "19.2.3"
