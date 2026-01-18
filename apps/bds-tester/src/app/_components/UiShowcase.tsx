@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Dropdown, DropdownItem, modal, TextInput } from "@bds-web/ui";
+import { Button, Checkbox, Dropdown, DropdownItem, modal, TextInput } from "@bds-web/ui";
 import { useMemo, useState } from "react";
 import { ExampleCard } from "./ExampleCard";
 
@@ -126,6 +126,15 @@ export const UiShowcase = () => {
     for (const combo of dropdownCombos) init[combo.id] = combo.initialSelected;
     return init;
   });
+
+  const checkboxSizes = useMemo(() => [16, 20, 24, 28, 32], []);
+  const [checkboxStates, setCheckboxStates] = useState<Record<number, boolean>>(
+    () => {
+      const init: Record<number, boolean> = {};
+      checkboxSizes.forEach((size) => (init[size] = false));
+      return init;
+    }
+  );
 
   return (
     <div className="flex flex-col gap-4">
@@ -363,6 +372,39 @@ export const UiShowcase = () => {
           <Button buttonType="danger" onClick={() => modal.closeAll()}>
             Close all
           </Button>
+        </div>
+      </ExampleCard>
+
+      <ExampleCard
+        title="Checkbox — 다양한 크기"
+        description="checked 상태와 size를 직접 조작해볼 수 있습니다."
+        code={[
+          'import { Checkbox } from "@bds-web/ui";',
+          'import { useState } from "react";',
+          "",
+          "const [checked, setChecked] = useState(false);",
+          "",
+          "<Checkbox checked={checked} onChange={setChecked} size={20} />",
+        ].join("\n")}>
+        <div className="flex flex-wrap items-center gap-6">
+          {checkboxSizes.map((size) => (
+            <VariantCell
+              key={size}
+              title={
+                <>
+                  <Chip>size={size}</Chip>
+                  <Chip>{checkboxStates[size] ? "checked" : "unchecked"}</Chip>
+                </>
+              }>
+              <Checkbox
+                checked={checkboxStates[size]}
+                onChange={(checked) =>
+                  setCheckboxStates((prev) => ({ ...prev, [size]: checked }))
+                }
+                size={size}
+              />
+            </VariantCell>
+          ))}
         </div>
       </ExampleCard>
     </div>

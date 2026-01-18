@@ -491,7 +491,7 @@ export default function PackagesDocPage() {
               <div className="flex flex-wrap gap-2">
                 <Chip>Exports</Chip>
                 <span className="text-body text-greyscale-80">
-                  Button, TextInput, Dropdown, ModalProvider, modal, BdsRegistry
+                  Button, TextInput, Dropdown, Checkbox, ModalProvider, modal, BdsRegistry
                 </span>
               </div>
 
@@ -627,6 +627,41 @@ export default function PackagesDocPage() {
               />
 
               <DocTable<PropRow>
+                caption="CheckboxProps (Checkbox)"
+                columns={[
+                  { key: "prop", header: "Prop", widthClassName: "w-[180px]" },
+                  { key: "type", header: "Type", widthClassName: "w-[260px]" },
+                  { key: "required", header: "Required", widthClassName: "w-[110px]" },
+                  { key: "default", header: "Default", widthClassName: "w-[140px]" },
+                  { key: "description", header: "Description" },
+                ]}
+                rows={[
+                  {
+                    prop: "checked",
+                    type: "boolean",
+                    required: "Yes",
+                    default: "-",
+                    description: "체크박스의 체크 상태",
+                  },
+                  {
+                    prop: "onChange",
+                    type: "(checked: boolean) => void",
+                    required: "Yes",
+                    default: "-",
+                    description:
+                      "체크박스 클릭 시 호출됩니다. 새로운 체크 상태를 인자로 받습니다.",
+                  },
+                  {
+                    prop: "size",
+                    type: "number",
+                    required: "No",
+                    default: "20",
+                    description: "체크박스의 가로/세로 크기(픽셀)",
+                  },
+                ]}
+              />
+
+              <DocTable<PropRow>
                 caption="ModalProviderProps (ModalProvider)"
                 columns={[
                   { key: "prop", header: "Prop", widthClassName: "w-[180px]" },
@@ -713,21 +748,27 @@ export default function PackagesDocPage() {
                 label="UI 사용 예시"
                 language="tsx"
                 code={[
-                  'import { Button, TextInput, Dropdown, modal } from "@bds-web/ui";',
+                  'import { Button, TextInput, Dropdown, Checkbox, modal } from "@bds-web/ui";',
+                  'import { useState } from "react";',
                   "",
-                  "export const Example = () => (",
-                  "  <div>",
-                  "    <Button onClick={() => modal.open({ title: 'Hello', content: <div>content</div> })}>",
-                  "      Open Modal",
-                  "    </Button>",
-                  "    <TextInput label=\"Name\" placeholder=\"Enter\" />",
-                  "    <Dropdown",
-                  "      options={[{ name: 'A', value: 'A' }]}",
-                  "      selected={null}",
-                  "      onSelect={() => {}}",
-                  "    />",
-                  "  </div>",
-                  ");",
+                  "export const Example = () => {",
+                  "  const [checked, setChecked] = useState(false);",
+                  "  ",
+                  "  return (",
+                  "    <div>",
+                  "      <Button onClick={() => modal.open({ title: 'Hello', content: <div>content</div> })}>",
+                  "        Open Modal",
+                  "      </Button>",
+                  "      <TextInput label=\"Name\" placeholder=\"Enter\" />",
+                  "      <Dropdown",
+                  "        options={[{ name: 'A', value: 'A' }]}",
+                  "        selected={null}",
+                  "        onSelect={() => {}}",
+                  "      />",
+                  "      <Checkbox checked={checked} onChange={setChecked} size={24} />",
+                  "    </div>",
+                  "  );",
+                  "};",
                 ].join("\n")}
               />
 

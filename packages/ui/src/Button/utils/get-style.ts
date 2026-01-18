@@ -20,11 +20,11 @@ const bg = {
   },
 
   disabled: {
-    primary: colors.greyScale[40],
-    secondary: colors.greyScale[40],
+    primary: colors.greyScale[20],
+    secondary: colors.greyScale[20],
     ghost: "transparent",
     text: "transparent",
-    danger: colors.greyScale[40],
+    danger: colors.greyScale[20],
   },
 } as const;
 
@@ -46,11 +46,11 @@ const text = {
   },
 
   disabled: {
-    primary: colors.greyScale[50],
-    secondary: colors.greyScale[50],
+    primary: colors.greyScale[10],
+    secondary: colors.greyScale[10],
     ghost: colors.greyScale[20],
     text: colors.greyScale[20],
-    danger: colors.greyScale[50],
+    danger: colors.greyScale[10],
   },
 } as const;
 
