@@ -34,6 +34,8 @@ export const SelectedText = styled.span`
 
 export const OptionsList = styled.ul<{ $size: DropdownSize; $isOpen: boolean }>`
   min-width: calc(100% + 2px);
+  max-height: 200px;
+  overflow-y: scroll;
   background-color: ${colors.static.white};
   border-radius: ${shapes.large};
   ${({ $size }) =>
