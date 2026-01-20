@@ -44,9 +44,7 @@ export const OptionsList = styled.ul<{ $size: DropdownSize; $isOpen: boolean }>`
       : `
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
   `};
-  position: absolute;
-  top: calc(100% + ${({ $size }) => ($size === "small" ? "4px" : "10px")});
-  left: -1px;
+  position: static;
   box-sizing: border-box;
   z-index: ${({ $isOpen }) => ($isOpen ? 100 : -1)};
   overflow: hidden;

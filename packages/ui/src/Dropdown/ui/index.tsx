@@ -7,6 +7,8 @@ import { DropdownProps } from "../types/props";
 import * as S from "./style";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 
+import { DropdownPortal } from "./DropdownPortal";
+
 export const Dropdown = ({
   dropdownSize = "small",
   onSelect,
@@ -22,26 +24,33 @@ export const Dropdown = ({
       ref={containerRef}
       $size={dropdownSize}
       $width={width}
-      onClick={toggleDropdown}>
+      onClick={toggleDropdown}
+      style={{ position: "relative" }}
+    >
       <S.SelectedItem>
         <S.SelectedText>
           {selected ? selected.name : "선택해주세요."}
         </S.SelectedText>
         <TriangleIcon />
       </S.SelectedItem>
-      {isOpen && (
-        <S.OptionsList $size={dropdownSize} $isOpen={true}>
+      <DropdownPortal containerRef={containerRef} isOpen={isOpen}>
+        <S.OptionsList $size={dropdownSize} $isOpen={isOpen}>
           {options.map((option, idx) => (
             <S.OptionItem
               key={idx}
               $isSelected={selected?.value === option.value}
               $size={dropdownSize}
-              onClick={() => onSelect(option)}>
+              onClick={e => {
+                e.stopPropagation();
+                onSelect(option);
+                closeDropdown();
+              }}
+            >
               {option.name}
             </S.OptionItem>
           ))}
         </S.OptionsList>
-      )}
+      </DropdownPortal>
     </S.Container>
   );
 };
