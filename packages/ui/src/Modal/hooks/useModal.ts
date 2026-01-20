@@ -8,10 +8,10 @@ export const useModal = () => {
   const [mountedRoot, setMountedRoot] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    let modalRoot = document.getElementById("dds-dialog-root");
+    let modalRoot = document.getElementById("bds-modal-root");
     if (!modalRoot) {
       modalRoot = document.createElement("div");
-      modalRoot.id = "dds-dialog-root";
+      modalRoot.id = "bds-modal-root";
       document.body.appendChild(modalRoot);
     }
     setTimeout(() => {
