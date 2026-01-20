@@ -9,6 +9,8 @@ export const Container = styled.div<{ $size: DropdownSize; $width: string }>`
   border-radius: ${shapes.large};
   padding: 0 20px;
   ${({ $size }) => getStyle($size)};
+  box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.05);
+  background-color: ${colors.static.white};
   min-width: ${({ $width }) => $width};
   cursor: pointer;
   position: relative;
