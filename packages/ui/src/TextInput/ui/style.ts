@@ -3,7 +3,8 @@ import { shapes } from "@bds-web/shapes";
 import { typoCss } from "@bds-web/typography";
 import styled from "@emotion/styled";
 
-export const Container = styled.div`
+export const Container = styled.div<{ $width?: string | number }>`
+  width: ${({ $width }) => $width};
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -11,6 +12,7 @@ export const Container = styled.div`
 `;
 
 export const TextInput = styled.input<{ $isError: boolean }>`
+  width: 100%;
   ${typoCss("Body")};
   height: 48px;
   border-radius: ${shapes.medium};
