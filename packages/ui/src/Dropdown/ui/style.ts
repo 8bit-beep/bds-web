@@ -9,7 +9,7 @@ export const Container = styled.div<{ $size: DropdownSize; $width: string }>`
   border-radius: ${shapes.large};
   padding: 0 20px;
   ${({ $size }) => getStyle($size)};
-  width: ${({ $width }) => $width};
+  min-width: ${({ $width }) => $width};
   cursor: pointer;
   position: relative;
   user-select: none;
@@ -21,6 +21,7 @@ export const SelectedItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   height: 100%;
   user-select: none;
 `;
