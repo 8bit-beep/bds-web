@@ -25,8 +25,7 @@ export const Dropdown = ({
       $size={dropdownSize}
       $width={width}
       onClick={toggleDropdown}
-      style={{ position: "relative" }}
-    >
+      style={{ position: "relative" }}>
       <S.SelectedItem>
         <S.SelectedText>
           {selected ? selected.name : "선택해주세요."}
@@ -34,18 +33,17 @@ export const Dropdown = ({
         <TriangleIcon />
       </S.SelectedItem>
       <DropdownPortal containerRef={containerRef} isOpen={isOpen}>
-        <S.OptionsList $size={dropdownSize} $isOpen={isOpen}>
+        <S.OptionsList $isOpen={isOpen}>
           {options.map((option, idx) => (
             <S.OptionItem
               key={idx}
               $isSelected={selected?.value === option.value}
               $size={dropdownSize}
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
                 onSelect(option);
                 closeDropdown();
-              }}
-            >
+              }}>
               {option.name}
             </S.OptionItem>
           ))}

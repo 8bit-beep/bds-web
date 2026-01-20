@@ -34,20 +34,13 @@ export const SelectedText = styled.span`
   text-overflow: ellipsis;
 `;
 
-export const OptionsList = styled.ul<{ $size: DropdownSize; $isOpen: boolean }>`
+export const OptionsList = styled.ul<{ $isOpen: boolean }>`
   min-width: calc(100% + 2px);
   max-height: 200px;
   overflow-y: scroll;
   background-color: ${colors.static.white};
   border-radius: ${shapes.large};
-  ${({ $size }) =>
-    $size === "small"
-      ? `
-    border: 1px solid ${colors.greyScale[20]};
-  `
-      : `
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-  `};
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
   position: static;
   box-sizing: border-box;
   z-index: ${({ $isOpen }) => ($isOpen ? 100 : -1)};
