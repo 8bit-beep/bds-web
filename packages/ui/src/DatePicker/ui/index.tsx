@@ -18,7 +18,7 @@ export const DatePicker = ({
   return (
     <S.Container onClick={() => ref.current?.click()}>
       <S.DateText>{formatDate(date)}</S.DateText>
-      <CalendarIcon size={16} />
+      <CalendarIcon size={16} pointer />
       <input
         ref={ref}
         type="date"
