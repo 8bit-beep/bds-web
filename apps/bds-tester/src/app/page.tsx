@@ -1,4 +1,5 @@
 import { CodeBlock } from "./_components/CodeBlock";
+import DatePickerShowcase from "./_components/DatePickerShowcase";
 import { DocTable } from "./_components/DocTable";
 import { UiShowcase } from "./_components/UiShowcase";
 
@@ -488,6 +489,74 @@ export default function PackagesDocPage() {
             title="@bds-web/ui"
             description="핵심 UI 컴포넌트와 Modal 유틸, Next(Emotion) Registry를 제공합니다. (아이콘 컴포넌트는 문서에서 제외)">
             <div className="flex flex-col gap-6">
+
+              {/* DatePicker 설명 및 체험 */}
+              <div className="flex flex-col gap-4">
+                <div className="text-h3 text-greyscale-90">DatePicker</div>
+                <p className="text-body text-greyscale-70">
+                  날짜를 선택할 수 있는 달력 UI 컴포넌트입니다. <br />
+                  <b>date</b> (기본값: 오늘), <b>onChangeDate</b> (날짜 변경 콜백), <b>disablePast</b> (과거 비활성화), <b>title</b> (달력 상단 제목) props를 지원합니다.
+                </p>
+                <DocTable<PropRow>
+                  caption="DatePickerProps (DatePicker)"
+                  columns={[
+                    { key: "prop", header: "Prop", widthClassName: "w-[180px]" },
+                    { key: "type", header: "Type", widthClassName: "w-[260px]" },
+                    { key: "required", header: "Required", widthClassName: "w-[110px]" },
+                    { key: "default", header: "Default", widthClassName: "w-[140px]" },
+                    { key: "description", header: "Description" },
+                  ]}
+                  rows={[
+                    {
+                      prop: "date",
+                      type: "Date",
+                      required: "No",
+                      default: "오늘(new Date())",
+                      description: "선택된 날짜 값 (컨트롤용)",
+                    },
+                    {
+                      prop: "onChangeDate",
+                      type: "(date: Date) => void",
+                      required: "No",
+                      default: "() => {}",
+                      description: "날짜 선택 시 호출되는 콜백",
+                    },
+                    {
+                      prop: "disablePast",
+                      type: "boolean",
+                      required: "No",
+                      default: "false",
+                      description: "과거 날짜 비활성화 여부",
+                    },
+                    {
+                      prop: "title",
+                      type: "string",
+                      required: "No",
+                      default: '"날짜 선택"',
+                      description: "달력 상단 제목",
+                    },
+                  ]}
+                />
+                <CodeBlock
+                  label="DatePicker 사용 예시"
+                  language="tsx"
+                  code={[
+                    'import { DatePicker } from "@bds-web/ui/DatePicker/ui/index";',
+                    'import { useState } from "react";',
+                    '',
+                    'export default function Example() {',
+                    '  const [date, setDate] = useState(new Date());',
+                    '  return (',
+                    '    <DatePicker date={date} onChangeDate={setDate} />',
+                    '  );',
+                    '}',
+                  ].join("\n")}
+                />
+                <div className="mt-2">
+                  <div className="text-caption2 text-greyscale-70 mb-1">체험</div>
+                  <DatePickerShowcase />
+                </div>
+              </div>
               <div className="flex flex-wrap gap-2">
                 <Chip>Exports</Chip>
                 <span className="text-body text-greyscale-80">
