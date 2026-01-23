@@ -25,12 +25,15 @@ export const DatePicker = ({
         value={formatDate(date)}
         min={min}
         aria-label={title}
-        style={{ display: "none" }}
         onChange={(e) => {
           const value = e.target.value;
-          if (value) {
-            onChangeDate(new Date(value));
-          }
+          if (value) onChangeDate(new Date(value));
+        }}
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: 0,
+          pointerEvents: "none",
         }}
       />
     </S.Container>
