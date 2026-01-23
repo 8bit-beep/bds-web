@@ -25,3 +25,10 @@ export const DateText = styled.span`
   flex: 1;
   user-select: none;
 `;
+
+export const HiddenDateInput = styled.input`
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+`;

@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { CalendarIcon } from "../../CalendarIcon";
 import { DatePickerProps } from "../types/props";
 import { formatDate } from "../utils/format-date";
+import { formatDateInput } from "../utils/format-date-input";
 import * as S from "./style";
 
 export const DatePicker = ({
@@ -12,28 +13,26 @@ export const DatePicker = ({
   disablePast = false,
   title = "날짜 선택",
 }: DatePickerProps) => {
-  const min = disablePast ? formatDate(new Date()) : undefined;
   const ref = useRef<HTMLInputElement>(null);
 
+  const value = formatDateInput(date);
+  const min = disablePast ? formatDateInput(new Date()) : undefined;
+
   return (
-    <S.Container onClick={() => ref.current?.click()}>
+    <S.Container onClick={() => ref.current?.showPicker()}>
       <S.DateText>{formatDate(date)}</S.DateText>
-      <CalendarIcon size={16} pointer />
-      <input
+      <CalendarIcon size={16} />
+
+      <S.HiddenDateInput
         ref={ref}
         type="date"
-        value={formatDate(date)}
+        value={value}
         min={min}
         aria-label={title}
         onChange={(e) => {
-          const value = e.target.value;
-          if (value) onChangeDate(new Date(value));
-        }}
-        style={{
-          position: "absolute",
-          inset: 0,
-          opacity: 0,
-          pointerEvents: "none",
+          if (e.target.value) {
+            onChangeDate(new Date(e.target.value));
+          }
         }}
       />
     </S.Container>
