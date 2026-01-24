@@ -55,7 +55,7 @@ export const Modal = styled.div`
 `;
 
 export const ModalHeader = styled.div`
-	min-width: 360px;
+	min-width: 240px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
