@@ -21,31 +21,31 @@ export const typographyTokens = {
     weights: weightTokens.Medium,
   },
   H2: {
-    size: "24px",
+    size: "28px",
     weights: weightTokens.Medium,
   },
   H3: {
-    size: "20px",
+    size: "24px",
     weights: weightTokens.Bold,
   },
   H4: {
-    size: "16px",
+    size: "18px",
     weights: weightTokens.Medium,
   },
   Accent: {
-    size: "16px",
+    size: "18px",
     weights: weightTokens.SemiBold,
   },
   Body: {
-    size: "14px",
+    size: "16px",
     weights: weightTokens.Regular,
   },
   Caption1: {
-    size: "12px",
+    size: "14px",
     weights: weightTokens.Medium,
   },
   Caption2: {
-    size: "12px",
+    size: "14px",
     weights: weightTokens.Regular,
   },
 }
