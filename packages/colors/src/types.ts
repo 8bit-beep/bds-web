@@ -18,6 +18,7 @@ export interface Colors {
   };
 
   blue: {
+    bright: string;
     light: string;
     dark: string;
   };

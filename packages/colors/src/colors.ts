@@ -18,6 +18,7 @@ export const colors: Colors = {
     dark: "var(--bds-color-red-dark)",
   },
   blue: {
+    bright: "var(--bds-color-blue-bright)",
     light: "var(--bds-color-blue-light)",
     dark: "var(--bds-color-blue-dark)",
   },
