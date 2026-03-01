@@ -18,7 +18,7 @@ export const weightTokens = {
 export const typographyTokens = {
   H1: {
     size: "36px",
-    weights: weightTokens.Medium,
+    weights: weightTokens.Bold,
   },
   H2: {
     size: "28px",
