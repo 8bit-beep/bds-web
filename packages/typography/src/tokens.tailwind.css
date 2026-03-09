@@ -1,25 +1,25 @@
 @theme {
   --text-h1: 36px;
-  --text-h1--font-weight: 500;
+  --text-h1--font-weight: 700;
 
-  --text-h2: 24px;
+  --text-h2: 28px;
   --text-h2--font-weight: 500;
 
-  --text-h3: 20px;
+  --text-h3: 24px;
   --text-h3--font-weight: 700;
 
-  --text-h4: 16px;
+  --text-h4: 18px;
   --text-h4--font-weight: 500;
 
-  --text-accent: 16px;
+  --text-accent: 18px;
   --text-accent--font-weight: 600;
 
-  --text-body: 14px;
+  --text-body: 16px;
   --text-body--font-weight: 400;
 
-  --text-caption1: 12px;
+  --text-caption1: 14px;
   --text-caption1--font-weight: 500;
 
-  --text-caption2: 12px;
+  --text-caption2: 14px;
   --text-caption2--font-weight: 400;
 }
