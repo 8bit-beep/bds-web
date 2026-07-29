@@ -9,7 +9,7 @@ export const Button = styled.button<{
   $buttonType: ButtonType;
   $buttonSize: ButtonSize;
 }>`
-  ${typoCss("Caption2")};
+  ${({ $buttonSize }) => typoCss(getSize($buttonSize).typo)};
   cursor: pointer;
   ${({ $buttonType }) => getStyle($buttonType)};
   height: ${({ $buttonSize }) => getSize($buttonSize).height};
@@ -21,3 +21,4 @@ export const Button = styled.button<{
   gap: 10px;
   box-sizing: border-box;
 `;
+
