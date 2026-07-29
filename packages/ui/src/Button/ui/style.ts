@@ -12,8 +12,8 @@ export const Button = styled.button<{
   ${typoCss("Caption2")};
   cursor: pointer;
   ${({ $buttonType }) => getStyle($buttonType)};
-  height: ${({ $buttonSize }) => getSize($buttonSize)};
-  padding: 12px ${({ $buttonSize }) => getSize($buttonSize)};
+  height: ${({ $buttonSize }) => getSize($buttonSize).height};
+  padding: 0 ${({ $buttonSize }) => getSize($buttonSize).paddingX};
   border-radius: ${shapes.small};
   display: flex;
   align-items: center;
@@ -21,4 +21,3 @@ export const Button = styled.button<{
   gap: 10px;
   box-sizing: border-box;
 `;
-
