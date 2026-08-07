@@ -17,15 +17,15 @@ export const weightTokens = {
 
 export const typographyTokens = {
   H1: {
-    size: "36px",
-    weights: weightTokens.Bold,
-  },
-  H2: {
     size: "28px",
     weights: weightTokens.Medium,
   },
-  H3: {
+  H2: {
     size: "24px",
+    weights: weightTokens.Medium,
+  },
+  H3: {
+    size: "20px",
     weights: weightTokens.Bold,
   },
   H4: {
@@ -38,7 +38,7 @@ export const typographyTokens = {
   },
   Body: {
     size: "16px",
-    weights: weightTokens.Regular,
+    weights: weightTokens.Medium,
   },
   Caption1: {
     size: "14px",

@@ -9,11 +9,11 @@ export const Button = styled.button<{
   $buttonType: ButtonType;
   $buttonSize: ButtonSize;
 }>`
-  ${typoCss("Caption2")};
+  ${({ $buttonSize }) => typoCss(getSize($buttonSize).typo)};
   cursor: pointer;
   ${({ $buttonType }) => getStyle($buttonType)};
-  height: ${({ $buttonSize }) => getSize($buttonSize)};
-  padding: 12px ${({ $buttonSize }) => getSize($buttonSize)};
+  height: ${({ $buttonSize }) => getSize($buttonSize).height};
+  padding: 0 ${({ $buttonSize }) => getSize($buttonSize).paddingX};
   border-radius: ${shapes.small};
   display: flex;
   align-items: center;
