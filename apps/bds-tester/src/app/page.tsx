@@ -60,11 +60,11 @@ const Chip = ({ children }: { children: React.ReactNode }) => (
 export default function PackagesDocPage() {
   const toc = [
     { href: "#quick-start", label: "빠른 시작" },
-    { href: "#colors", label: "@bds-web/colors" },
-    { href: "#shapes", label: "@bds-web/shapes" },
-    { href: "#typography", label: "@bds-web/typography" },
-    { href: "#themes", label: "@bds-web/themes" },
-    { href: "#ui", label: "@bds-web/ui" },
+    { href: "#colors", label: "@beep-ds/colors" },
+    { href: "#shapes", label: "@beep-ds/shapes" },
+    { href: "#typography", label: "@beep-ds/typography" },
+    { href: "#themes", label: "@beep-ds/themes" },
+    { href: "#ui", label: "@beep-ds/ui" },
   ];
 
   return (
@@ -102,14 +102,14 @@ export default function PackagesDocPage() {
                 language="sh"
                 code={[
                   "# 설치",
-                  "pnpm add @bds-web/ui @bds-web/themes @bds-web/colors @bds-web/typography @bds-web/shapes",
+                  "pnpm add @beep-ds/ui @beep-ds/themes @beep-ds/colors @beep-ds/typography @beep-ds/shapes",
                   "",
                   "# 전역 스타일(예: app/globals.css)에 토큰 CSS import (Tailwind v4)",
                   '@import \"tailwindcss\";',
-                  '@import \"@bds-web/themes/theme.tailwind.css\";',
-                  '@import \"@bds-web/colors/colors.css\";',
-                  '@import \"@bds-web/typography/tokens.tailwind.css\";',
-                  '@import \"@bds-web/shapes/tokens.tailwind.css\";',
+                  '@import \"@beep-ds/themes/theme.tailwind.css\";',
+                  '@import \"@beep-ds/colors/colors.css\";',
+                  '@import \"@beep-ds/typography/tokens.tailwind.css\";',
+                  '@import \"@beep-ds/shapes/tokens.tailwind.css\";',
                 ].join("\n")}
               />
 
@@ -117,7 +117,7 @@ export default function PackagesDocPage() {
                 label="(권장) Next App Router - Emotion SSR Registry"
                 language="tsx"
                 code={[
-                  'import { BdsRegistry, ModalProvider } from "@bds-web/ui";',
+                  'import { BdsRegistry, ModalProvider } from "@beep-ds/ui";',
                   "",
                   "export default function RootLayout({ children }: { children: React.ReactNode }) {",
                   "  return (",
@@ -136,7 +136,7 @@ export default function PackagesDocPage() {
 
           <Section
             id="colors"
-            title="@bds-web/colors"
+            title="@beep-ds/colors"
             description="CSS 변수 기반 컬러 토큰 + TS에서 사용할 수 있는 colors 객체를 제공합니다.">
             <div className="flex flex-col gap-4">
               <div className="flex flex-wrap gap-2">
@@ -144,7 +144,7 @@ export default function PackagesDocPage() {
                 <span className="text-body text-greyscale-80">colors</span>
                 <Chip>CSS</Chip>
                 <span className="text-body text-greyscale-80">
-                  @bds-web/colors/colors.css
+                  @beep-ds/colors/colors.css
                 </span>
               </div>
 
@@ -174,7 +174,7 @@ export default function PackagesDocPage() {
                 label="Example"
                 language="tsx"
                 code={[
-                  'import { colors } from "@bds-web/colors";',
+                  'import { colors } from "@beep-ds/colors";',
                   "",
                   "export const Example = () => (",
                   "  <div",
@@ -194,7 +194,7 @@ export default function PackagesDocPage() {
 
           <Section
             id="shapes"
-            title="@bds-web/shapes"
+            title="@beep-ds/shapes"
             description="Radius(shape) 토큰을 TS 객체와 Tailwind theme 변수(CSS)로 제공합니다.">
             <div className="flex flex-col gap-4">
               <div className="flex flex-wrap gap-2">
@@ -202,7 +202,7 @@ export default function PackagesDocPage() {
                 <span className="text-body text-greyscale-80">shapes</span>
                 <Chip>CSS</Chip>
                 <span className="text-body text-greyscale-80">
-                  @bds-web/shapes/tokens.tailwind.css
+                  @beep-ds/shapes/tokens.tailwind.css
                 </span>
               </div>
 
@@ -232,7 +232,7 @@ export default function PackagesDocPage() {
                 label="Example"
                 language="tsx"
                 code={[
-                  'import { shapes } from "@bds-web/shapes";',
+                  'import { shapes } from "@beep-ds/shapes";',
                   "",
                   "export const Example = () => (",
                   "  <div style={{ borderRadius: shapes.medium, border: '1px solid #0002', padding: 12 }}>",
@@ -259,7 +259,7 @@ export default function PackagesDocPage() {
 
           <Section
             id="typography"
-            title="@bds-web/typography"
+            title="@beep-ds/typography"
             description="Typography 토큰과 Emotion helper(typoCss)를 제공합니다.">
             <div className="flex flex-col gap-4">
               <div className="flex flex-wrap gap-2">
@@ -269,7 +269,7 @@ export default function PackagesDocPage() {
                 </span>
                 <Chip>CSS</Chip>
                 <span className="text-body text-greyscale-80">
-                  @bds-web/typography/tokens.tailwind.css
+                  @beep-ds/typography/tokens.tailwind.css
                 </span>
               </div>
 
@@ -318,7 +318,7 @@ export default function PackagesDocPage() {
                 label="Emotion example"
                 language="tsx"
                 code={[
-                  'import { typoCss } from "@bds-web/typography";',
+                  'import { typoCss } from "@beep-ds/typography";',
                   "",
                   "export const Title = () => (",
                   '  <h1 css={typoCss("H1")}>Hello</h1>',
@@ -342,7 +342,7 @@ export default function PackagesDocPage() {
 
           <Section
             id="themes"
-            title="@bds-web/themes"
+            title="@beep-ds/themes"
             description="light/dark 테마를 DOM에 적용하고 구독/토글하는 유틸 + hook, Next용 ThemeSetter를 제공합니다.">
             <div className="flex flex-col gap-4">
               <div className="flex flex-wrap gap-2">
@@ -351,13 +351,13 @@ export default function PackagesDocPage() {
                   &quot;light&quot; | &quot;dark&quot;
                 </span>
                 <Chip>Next</Chip>
-                <span className="text-body text-greyscale-80">@bds-web/themes/next</span>
+                <span className="text-body text-greyscale-80">@beep-ds/themes/next</span>
                 <Chip>Init (IIFE)</Chip>
-                <span className="text-body text-greyscale-80">@bds-web/themes/init</span>
+                <span className="text-body text-greyscale-80">@beep-ds/themes/init</span>
               </div>
 
               <DocTable<ApiRow>
-                caption="DOM utilities (from @bds-web/themes)"
+                caption="DOM utilities (from @beep-ds/themes)"
                 columns={[
                   { key: "name", header: "Name", widthClassName: "w-[180px]" },
                   {
@@ -426,7 +426,7 @@ export default function PackagesDocPage() {
               />
 
               <DocTable<ApiRow>
-                caption="Next export (from @bds-web/themes/next)"
+                caption="Next export (from @beep-ds/themes/next)"
                 columns={[
                   { key: "name", header: "Name", widthClassName: "w-[180px]" },
                   {
@@ -450,7 +450,7 @@ export default function PackagesDocPage() {
                 label="Next(App Router)에서 ThemeSetter 사용"
                 language="tsx"
                 code={[
-                  'import { ThemeSetter } from "@bds-web/themes/next";',
+                  'import { ThemeSetter } from "@beep-ds/themes/next";',
                   "",
                   "export default function RootLayout({ children }: { children: React.ReactNode }) {",
                   "  return (",
@@ -469,7 +469,7 @@ export default function PackagesDocPage() {
                 label="테마 토글 예시"
                 language="tsx"
                 code={[
-                  'import { toggleTheme, useTheme } from "@bds-web/themes";',
+                  'import { toggleTheme, useTheme } from "@beep-ds/themes";',
                   "",
                   "export const ThemeToggle = () => {",
                   "  const theme = useTheme();",
@@ -486,7 +486,7 @@ export default function PackagesDocPage() {
 
           <Section
             id="ui"
-            title="@bds-web/ui"
+            title="@beep-ds/ui"
             description="핵심 UI 컴포넌트와 Modal 유틸, Next(Emotion) Registry를 제공합니다. (아이콘 컴포넌트는 문서에서 제외)">
             <div className="flex flex-col gap-6">
 
@@ -541,7 +541,7 @@ export default function PackagesDocPage() {
                   label="DatePicker 사용 예시"
                   language="tsx"
                   code={[
-                    'import { DatePicker } from "@bds-web/ui/DatePicker/ui/index";',
+                    'import { DatePicker } from "@beep-ds/ui/DatePicker/ui/index";',
                     'import { useState } from "react";',
                     '',
                     'export default function Example() {',
@@ -784,7 +784,7 @@ export default function PackagesDocPage() {
               />
 
               <DocTable<ApiRow>
-                caption="Next export (from @bds-web/ui/next)"
+                caption="Next export (from @beep-ds/ui/next)"
                 columns={[
                   { key: "name", header: "Name", widthClassName: "w-[180px]" },
                   {
@@ -817,7 +817,7 @@ export default function PackagesDocPage() {
                 label="UI 사용 예시"
                 language="tsx"
                 code={[
-                  'import { Button, TextInput, Dropdown, Checkbox, modal } from "@bds-web/ui";',
+                  'import { Button, TextInput, Dropdown, Checkbox, modal } from "@beep-ds/ui";',
                   'import { useState } from "react";',
                   "",
                   "export const Example = () => {",

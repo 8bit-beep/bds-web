@@ -1,9 +1,9 @@
-import { shapes } from "@bds-web/shapes";
+import { shapes } from "@beep-ds/shapes";
 import styled from "@emotion/styled";
 import { DropdownSize } from "../types/props";
 import { getStyle } from "../utils/get-style";
-import { colors } from "@bds-web/colors";
-import { typoCss } from "@bds-web/typography";
+import { colors } from "@beep-ds/colors";
+import { typoCss } from "@beep-ds/typography";
 
 export const Container = styled.div<{ $size: DropdownSize; $width: string }>`
   border-radius: ${shapes.large};

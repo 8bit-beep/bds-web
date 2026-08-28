@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import { DropdownSize } from "../types/props";
-import { typoCss } from "@bds-web/typography";
+import { typoCss } from "@beep-ds/typography";
 
 const map = {
   small: css`

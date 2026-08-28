@@ -32,19 +32,19 @@ importers:
 
   apps/bds-tester:
     dependencies:
-      '@bds-web/colors':
+      '@beep-ds/colors':
         specifier: workspace:^
         version: link:../../packages/colors
-      '@bds-web/shapes':
+      '@beep-ds/shapes':
         specifier: workspace:^
         version: link:../../packages/shapes
-      '@bds-web/themes':
+      '@beep-ds/themes':
         specifier: workspace:^
         version: link:../../packages/themes
-      '@bds-web/typography':
+      '@beep-ds/typography':
         specifier: workspace:^
         version: link:../../packages/typography
-      '@bds-web/ui':
+      '@beep-ds/ui':
         specifier: workspace:^
         version: link:../../packages/ui
       next:
@@ -138,18 +138,18 @@ importers:
 
   packages/ui:
     dependencies:
-      '@bds-web/colors':
-        specifier: ^1.1.0
-        version: 1.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@bds-web/shapes':
-        specifier: ^1.1.0
-        version: 1.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@bds-web/themes':
-        specifier: ^1.0.0
-        version: 1.0.0(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3))(next@16.1.0(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@bds-web/typography':
-        specifier: ^1.1.0
-        version: 1.1.0(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@beep-ds/colors':
+        specifier: workspace:^
+        version: link:../colors
+      '@beep-ds/shapes':
+        specifier: workspace:^
+        version: link:../shapes
+      '@beep-ds/themes':
+        specifier: workspace:^
+        version: link:../themes
+      '@beep-ds/typography':
+        specifier: workspace:^
+        version: link:../typography
       '@emotion/cache':
         specifier: ^11.14.0
         version: 11.14.0
@@ -251,35 +251,6 @@ packages:
   '@babel/types@7.28.6':
     resolution: {integrity: sha512-0ZrskXVEHSWIqZM/sQZ4EV3jZJXRkio/WCxaqKZP1g//CEWEPSfeZFcms4XeKBCHU0ZKnIkdJeU/kF+eRp5lBg==}
     engines: {node: '>=6.9.0'}
-
-  '@bds-web/colors@1.1.0':
-    resolution: {integrity: sha512-+OZbTuLggo38yJXD4fFUAHt+yXVpMFHwr72BfSRivfa6nTf7gsHzC8NMF6/mDIN+6sFDMRFgdICcwuce5ruWqA==}
-    peerDependencies:
-      react: '>=19'
-      react-dom: '>=19'
-
-  '@bds-web/shapes@1.1.0':
-    resolution: {integrity: sha512-3Muzgk2SdAE6OBfj9Tnv84KMcxbGyf7cYkXYhwhobLRrexwMy5WCYY7OoLASuo0+FpTqTagO2SVJYOjvSnmFig==}
-    peerDependencies:
-      react: '>=19'
-      react-dom: '>=19'
-
-  '@bds-web/themes@1.0.0':
-    resolution: {integrity: sha512-6EmT8Hh5y/EFMC97fenUAdPlebMbMotRX9HBnKzwhKLsvp2rbnXauykByf7g2+ONiQPp39D8OkgCP1xbuP6FKg==}
-    peerDependencies:
-      '@emotion/react': ^11.14.0
-      '@emotion/styled': ^11.14.1
-      next: '>=16'
-      react: '>=19'
-      react-dom: '>=19'
-
-  '@bds-web/typography@1.1.0':
-    resolution: {integrity: sha512-Sl8IEkgcMqzsfQJtImvrjQyMCf26xFAXuxAenmD5Q/1lvBXnhCUe2t5GdlPb5bIbZvcQnq9fUzBaM/Ce3IfN7g==}
-    peerDependencies:
-      '@emotion/react': ^11.14.0
-      '@emotion/styled': ^11.14.1
-      react: '>=19'
-      react-dom: '>=19'
 
   '@emnapi/core@1.8.1':
     resolution: {integrity: sha512-AvT9QFpxK0Zd8J0jopedNm+w/2fIzvtPKPjqyw9jwvBaReTTqPBk9Hixaz7KbjimP+QNz605/XnjFcDAL2pqBg==}
@@ -1950,6 +1921,7 @@ packages:
   prettier@3.7.4:
     resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
     engines: {node: '>=14'}
+    hasBin: true
 
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
@@ -2238,6 +2210,7 @@ packages:
   typescript@5.9.2:
     resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
     engines: {node: '>=14.17'}
+    hasBin: true
 
   unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
@@ -2426,31 +2399,6 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
-
-  '@bds-web/colors@1.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    dependencies:
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
-
-  '@bds-web/shapes@1.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    dependencies:
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
-
-  '@bds-web/themes@1.0.0(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3))(next@16.1.0(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    dependencies:
-      '@emotion/react': 11.14.0(@types/react@19.2.8)(react@19.2.3)
-      '@emotion/styled': 11.14.1(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3)
-      next: 16.1.0(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
-
-  '@bds-web/typography@1.1.0(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
-    dependencies:
-      '@emotion/react': 11.14.0(@types/react@19.2.8)(react@19.2.3)
-      '@emotion/styled': 11.14.1(@emotion/react@11.14.0(@types/react@19.2.8)(react@19.2.3))(@types/react@19.2.8)(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.2.3(react@19.2.3)
 
   '@emnapi/core@1.8.1':
     dependencies:
@@ -3494,7 +3442,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
+  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -3516,7 +3464,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.53.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3

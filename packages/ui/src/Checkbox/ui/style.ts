@@ -1,5 +1,5 @@
-import { colors } from "@bds-web/colors";
-import { shapes } from "@bds-web/shapes";
+import { colors } from "@beep-ds/colors";
+import { shapes } from "@beep-ds/shapes";
 import styled from "@emotion/styled";
 
 export const Container = styled.div<{ $size: number, $checked: boolean }>`

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Checkbox, Dropdown, DropdownItem, modal, TextInput } from "@bds-web/ui";
+import { Button, Checkbox, Dropdown, DropdownItem, modal, TextInput } from "@beep-ds/ui";
 import { useMemo, useState } from "react";
 import { ExampleCard } from "./ExampleCard";
 
@@ -308,7 +308,7 @@ export const UiShowcase = () => {
         title="Modal — 동작 테스트"
         description="modal.open/close/closeAll + stacking 동작을 실제로 눌러볼 수 있습니다."
         code={[
-          'import { modal } from "@bds-web/ui";',
+          'import { modal } from "@beep-ds/ui";',
           "",
           "modal.open({ title: 'Title', content: <div>Content</div> });",
           "modal.close();",
@@ -379,7 +379,7 @@ export const UiShowcase = () => {
         title="Checkbox — 다양한 크기"
         description="checked 상태와 size를 직접 조작해볼 수 있습니다."
         code={[
-          'import { Checkbox } from "@bds-web/ui";',
+          'import { Checkbox } from "@beep-ds/ui";',
           'import { useState } from "react";',
           "",
           "const [checked, setChecked] = useState(false);",

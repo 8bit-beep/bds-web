@@ -1,6 +1,6 @@
 "use client";
 
-import { colors } from "@bds-web/colors";
+import { colors } from "@beep-ds/colors";
 
 export const TriangleIcon = () => {
   return (

@@ -1,4 +1,4 @@
-import { colors } from "@bds-web/colors";
+import { colors } from "@beep-ds/colors";
 import { ButtonType } from "../types/props";
 import { css } from "@emotion/react";
 

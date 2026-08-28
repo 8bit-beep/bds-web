@@ -1,6 +1,6 @@
 "use client";
 
-import { DatePicker } from "@bds-web/ui";
+import { DatePicker } from "@beep-ds/ui";
 import { useState } from "react";
 
 export default function DatePickerShowcase() {

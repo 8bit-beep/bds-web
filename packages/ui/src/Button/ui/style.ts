@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { ButtonSize, ButtonType } from "../types/props";
 import { getStyle } from "../utils/get-style";
 import { getSize } from "../utils/get-size";
-import { typoCss } from "@bds-web/typography";
-import { shapes } from "@bds-web/shapes";
+import { typoCss } from "@beep-ds/typography";
+import { shapes } from "@beep-ds/shapes";
 
 export const Button = styled.button<{
   $buttonType: ButtonType;

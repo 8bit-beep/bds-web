@@ -1,5 +1,5 @@
 {
-  "name": "@bds-web/typography",
+  "name": "@beep-ds/typography",
   "version": "1.1.0",
   "private": false,
   "main": "./dist/index.js",

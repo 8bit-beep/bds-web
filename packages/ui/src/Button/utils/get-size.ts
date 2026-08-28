@@ -1,4 +1,4 @@
-import { typoCss } from "@bds-web/typography";
+import { typoCss } from "@beep-ds/typography";
 import { ButtonSize } from "../types/props"
 
 type TypographyLevel = Parameters<typeof typoCss>[0];

@@ -1,8 +1,8 @@
 "use client";
 
-import { colors } from "@bds-web/colors";
-import { shapes } from "@bds-web/shapes";
-import { typoCss } from "@bds-web/typography";
+import { colors } from "@beep-ds/colors";
+import { shapes } from "@beep-ds/shapes";
+import { typoCss } from "@beep-ds/typography";
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
