@@ -15,6 +15,7 @@ export const Dropdown = ({
   options,
   selected,
   width = "auto",
+  openDirection = "down",
 }: DropdownProps) => {
   const { isOpen, closeDropdown, toggleDropdown } = useDropdown();
   const containerRef = useOutsideClick(isOpen, closeDropdown);
@@ -32,7 +33,10 @@ export const Dropdown = ({
         </S.SelectedText>
         <TriangleIcon />
       </S.SelectedItem>
-      <DropdownPortal containerRef={containerRef} isOpen={isOpen}>
+      <DropdownPortal
+        containerRef={containerRef}
+        isOpen={isOpen}
+        openDirection={openDirection}>
         <S.OptionsList $isOpen={isOpen}>
           {options.map((option, idx) => (
             <S.OptionItem
