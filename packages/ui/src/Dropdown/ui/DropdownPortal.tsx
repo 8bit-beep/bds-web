@@ -1,14 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { DropdownOpenDirection } from "../types/props";
 
 
 interface DropdownPortalProps {
   children: React.ReactNode;
   containerRef: React.RefObject<HTMLElement | null>;
   isOpen: boolean;
+  openDirection?: DropdownOpenDirection;
 }
 
-export const DropdownPortal = ({ children, containerRef, isOpen }: DropdownPortalProps) => {
+export const DropdownPortal = ({ children, containerRef, isOpen, openDirection = "down" }: DropdownPortalProps) => {
   const [position, setPosition] = useState<{ top: number; left: number; width: number }>({ top: 0, left: 0, width: 0 });
   const portalRef = useRef<HTMLDivElement>(null);
 
@@ -16,12 +18,12 @@ export const DropdownPortal = ({ children, containerRef, isOpen }: DropdownPorta
     if (isOpen && containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
       setPosition({
-        top: rect.bottom + window.scrollY,
+        top: (openDirection === "up" ? rect.top : rect.bottom) + window.scrollY,
         left: rect.left + window.scrollX,
         width: rect.width,
       });
     }
-  }, [isOpen, containerRef]);
+  }, [isOpen, containerRef, openDirection]);
 
   if (!isOpen) return null;
 
@@ -30,10 +32,11 @@ export const DropdownPortal = ({ children, containerRef, isOpen }: DropdownPorta
       ref={portalRef}
       style={{
         position: "absolute",
-        top: position.top + 8,
+        top: openDirection === "up" ? position.top - 8 : position.top + 8,
         left: position.left,
         width: position.width,
         zIndex: 100000,
+        transform: openDirection === "up" ? "translateY(-100%)" : undefined,
       }}
       onPointerDown={e => e.stopPropagation()}
     >
