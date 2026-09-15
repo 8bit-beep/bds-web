@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { DropdownOpenDirection } from "../types/props";
 
@@ -12,13 +12,24 @@ interface DropdownPortalProps {
 
 export const DropdownPortal = ({ children, containerRef, isOpen, openDirection = "down" }: DropdownPortalProps) => {
   const [position, setPosition] = useState<{ top: number; left: number; width: number }>({ top: 0, left: 0, width: 0 });
+  const [resolvedDirection, setResolvedDirection] = useState<Exclude<DropdownOpenDirection, "auto">>("down");
   const portalRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isOpen && containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
+      let direction: Exclude<DropdownOpenDirection, "auto"> = openDirection === "up" ? "up" : "down";
+      if (openDirection === "auto" && portalRef.current) {
+        const menuHeight = portalRef.current.offsetHeight;
+        const spaceBelow = window.innerHeight - rect.bottom - 8;
+        const spaceAbove = rect.top - 8;
+        if (menuHeight > spaceBelow && spaceAbove > spaceBelow) {
+          direction = "up";
+        }
+      }
+      setResolvedDirection(direction);
       setPosition({
-        top: (openDirection === "up" ? rect.top : rect.bottom) + window.scrollY,
+        top: (direction === "up" ? rect.top : rect.bottom) + window.scrollY,
         left: rect.left + window.scrollX,
         width: rect.width,
       });
@@ -32,11 +43,11 @@ export const DropdownPortal = ({ children, containerRef, isOpen, openDirection =
       ref={portalRef}
       style={{
         position: "absolute",
-        top: openDirection === "up" ? position.top - 8 : position.top + 8,
+        top: resolvedDirection === "up" ? position.top - 8 : position.top + 8,
         left: position.left,
         width: position.width,
         zIndex: 100000,
-        transform: openDirection === "up" ? "translateY(-100%)" : undefined,
+        transform: resolvedDirection === "up" ? "translateY(-100%)" : undefined,
       }}
       onPointerDown={e => e.stopPropagation()}
     >

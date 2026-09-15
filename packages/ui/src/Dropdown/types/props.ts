@@ -2,7 +2,7 @@ import { DropdownItem } from "./dropdown-item";
 
 export type DropdownSize = "small" | "medium" | "large";
 
-export type DropdownOpenDirection = "down" | "up";
+export type DropdownOpenDirection = "down" | "up" | "auto";
 
 export interface DropdownProps {
   dropdownSize?: DropdownSize;
